@@ -18,6 +18,17 @@ This project assesses the consistency in radiologist verbiage describing coronar
 - `scripts/`: Python scripts for CT scan analysis, Agatston scoring, and NLP tasks.
 - `results/`: Output files including detection results, Agatston scores, and correlation analysis.
 
+## End Goal
+The end goal of this project is to produce academic papers across three domains: Coronary Artery Calcifications (CAC), Mitral Valve Calcifications, and Thoracic Aorta Calcifications.
+
+You can review the type of academic paper this project aims to produce for the **Coronary Artery Calcification (CAC)** domain by following this link:
+
+[Evaluating Consistency in Radiologist Verbiage for Coronary Calcification with YOLOv8 Detection and Agatston Scoring](https://docs.google.com/document/d/1qy1QdEzOeG02j8d_3BSurMu_xPFWHbEnP1vC8Xp-1zk/edit)
+
+### Placeholder for Future Papers
+- Mitral Valve Calcification (MVC): Paper outline coming soon.
+- Thoracic Aorta Calcification (TAC): Paper outline coming soon.
+
 ## Usage
 
 ### 1. Clone the repository
@@ -60,14 +71,3 @@ Finally, correlate the verbiage used in the reports with the Agatston scores:
 ```bash
 python scripts/correlation_analysis.py --nlp_results results/nlp_results.csv --agatston_scores results/agatston_scores.csv --output_file results/final_report.pdf
 ```
-
-### End Goal
-The end goal of this project is to produce academic papers across three domains: Coronary Artery Calcifications (CAC), Mitral Valve Calcifications, and Thoracic Aorta Calcifications.
-
-You can review the type of academic paper this project aims to produce for the **Coronary Artery Calcification (CAC)** domain by following this link:
-
-[Evaluating Consistency in Radiologist Verbiage for Coronary Calcification with YOLOv8 Detection and Agatston Scoring](https://docs.google.com/document/d/1qy1QdEzOeG02j8d_3BSurMu_xPFWHbEnP1vC8Xp-1zk/edit)
-
-### Placeholder for Future Papers
-- Mitral Valve Calcification (MVC): Paper outline coming soon.
-- Thoracic Aorta Calcification (TAC): Paper outline coming soon.
