@@ -1,62 +1,62 @@
 # Rad-Report-Consistency
 
-# Evaluating Consistency in Radiologist Verbiage for Coronary Calcification
+## Evaluating Consistency in Radiologist Verbiage for Coronary Calcification
 
-## Project Overview
-This project evaluates the consistency in radiologist verbiage when describing coronary calcification and compares it to automated detection and quantification using YOLOv8 and Agatston Scoring on non-contrast chest CT scans.
+### Project Overview
+This project assesses the consistency in radiologist verbiage describing coronary artery calcification (CAC) in non-contrast chest CT scans. The consistency of subjective radiologist reports is compared with quantitative calcification detection using the YOLOv8 model and Agatston Scoring.
 
 ### Key Steps:
-- **YOLOv8 Detection**: Apply a pre-trained YOLOv8 model to detect calcifications.
+- **YOLOv8 Detection**: Use a pre-trained YOLOv8 model to detect coronary calcifications.
 - **Agatston Scoring**: Compute Agatston scores based on detected calcifications.
-- **NLP Analysis**: Use NLP to analyze radiologist reports for terminology consistency.
-- **Statistical Correlation**: Compare subjective descriptions to quantitative Agatston scores.
+- **NLP Analysis**: Apply natural language processing (NLP) to evaluate the consistency of terms used by radiologists in their reports.
+- **Statistical Correlation**: Compare the subjective descriptions in reports with the objective Agatston scores.
 
 ## Repository Structure
-- `data/`: Contains radiology reports and CT scan metadata.
-- `models/`: YOLOv8 weights and NLP models.
-- `notebooks/`: Jupyter notebooks for data exploration.
-- `scripts/`: Python scripts for CT scan analysis, Agatston scoring, and NLP processing.
-- `results/`: Output files such as detection results, Agatston scores, and correlation analysis.
+- `data/`: Contains raw data, including radiology reports and metadata of CT scans.
+- `models/`: Pre-trained YOLOv8 weights and NLP models used for detection and report analysis.
+- `notebooks/`: Jupyter notebooks for exploring and analyzing the data.
+- `scripts/`: Python scripts for CT scan analysis, Agatston scoring, and NLP tasks.
+- `results/`: Output files including detection results, Agatston scores, and correlation analysis.
 
 ## Usage
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/radiologist-consistency-verbiage.git
-cd radiologist-consistency-verbiage
+git clone https://github.com/yourusername/rad-report-consistency.git
+cd rad-report-consistency
 ```
 
 ### 2. Install dependencies
-First, ensure that you have Python 3.8 or higher installed. Then, install the required dependencies from the `requirements.txt` file:
+Ensure that you are using Python 3.8 or higher. Install the required dependencies from the `requirements.txt` file:
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Prepare your data
-Ensure you have your 20,000 CT scans and the corresponding radiology reports in the proper format:
-- CT Scans should be stored in a folder, with paths specified in the config file.
-- Radiology reports should be in text format, processed for use in NLP analysis.
+Ensure that the dataset of 20,000 non-contrast chest CT scans and corresponding radiology reports is available and organized:
+- **CT Scans**: Place your CT scan data in a folder, and update paths in the configuration file.
+- **Radiology Reports**: Store all radiology reports in plain text format for NLP processing.
 
-### 4. Running the YOLOv8 model on the CT scans
-To detect coronary artery calcifications using the pre-trained YOLOv8 model, run the following command:
+### 4. Running the YOLOv8 model on CT scans
+To detect coronary artery calcifications using the YOLOv8 model, run the following command:
 ```bash
-python yolo_detection.py --input_folder path_to_ct_scans --output_folder results/
+python scripts/yolo_detection.py --input_folder path_to_ct_scans --output_folder results/yolo_outputs/
 ```
 
-### 5. Run Agatston scoring
-Once the YOLOv8 model has detected calcifications, the next step is to apply Agatston scoring. Use the following command:
+### 5. Perform Agatston Scoring
+After detecting calcifications, perform Agatston scoring based on the results of the YOLOv8 model:
 ```bash
-python agatston_scoring.py --input_folder path_to_yolo_results --output_file agatston_scores.csv
+python scripts/agatston_scoring.py --input_folder results/yolo_outputs --output_file results/agatston_scores.csv
 ```
 
-### 6. Analyze radiology report verbiage
-Perform Natural Language Processing on the radiology reports to evaluate the consistency of terms describing coronary calcifications:
+### 6. Analyze Radiology Report Verbiage
+Use NLP to assess the consistency and terminology used by radiologists in the reports:
 ```bash
-python nlp_analysis.py --reports_folder path_to_reports --output_file nlp_results.csv
+python scripts/nlp_analysis.py --reports_folder path_to_reports --output_file results/nlp_results.csv
 ```
 
-### 7. Correlate results
-Finally, correlate the radiology report verbiage with the Agatston scores and produce a summary report:
+### 7. Correlate Results
+Finally, correlate the verbiage used in the reports with the Agatston scores:
 ```bash
-python correlation_analysis.py --nlp_results nlp_results.csv --agatston_scores agatston_scores.csv --output_file final_report.pdf
+python scripts/correlation_analysis.py --nlp_results results/nlp_results.csv --agatston_scores results/agatston_scores.csv --output_file results/final_report.pdf
 ```
