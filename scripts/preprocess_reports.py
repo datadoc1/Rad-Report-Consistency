@@ -4,19 +4,21 @@ import csv
 from dotenv import load_dotenv
 import time
 
-def anonymize_reports(input_dir, output_dir):
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+def preprocess_report(report_text):
+    lines = report_text.split('\n')
+    relevant_lines = []
+    impression_started = False
 
-    for filename in os.listdir(input_dir):
-        if filename.endswith(".txt"):
-            with open(os.path.join(input_dir, filename), 'r') as file:
-                lines = file.readlines()
+    for line in lines:
+        if impression_started:
+            relevant_lines.append(line)
+        elif line.startswith("Great vessels:") or line.startswith("Heart and pericardium:") or line.startswith("HISTORY:"):
+            relevant_lines.append(line)
+        elif line.startswith("IMPRESSION:"):
+            relevant_lines.append(line)
+            impression_started = True
 
-            with open(os.path.join(output_dir, filename), 'w') as file:
-                for line in lines:
-                    if "REFERRING PHYSICIAN" not in line and "Electronically signed by" not in line:
-                        file.write(line)
+    return '\n'.join(relevant_lines)
 
 if __name__ == "__main__":
     load_dotenv()
@@ -44,20 +46,25 @@ if __name__ == "__main__":
 
     for filename in os.listdir(input_directory):
         if filename.endswith(".txt"):
+            print(f"Processing file: {filename}")
             with open(os.path.join(input_directory, filename), 'r') as file:
-                report_text = file.read()
+                raw_text = file.read()
+                report_text = preprocess_report(raw_text)
                 
             # First check if CAC is present
             detection_response = model.generate_content(detection_prompt.format(text=report_text))
             has_cac = detection_response.text.strip().lower() == 'true'
+            print(f"Detection result for {filename}: {has_cac}")
             time.sleep(5)
             # If CAC is present, extract relevant portions
             if has_cac:
                 extraction_response = model.generate_content(extraction_prompt.format(text=report_text))
                 relevant_text = extraction_response.text.strip()
+                print(f"Extraction result for {filename}: {relevant_text}")
                 time.sleep(5)
             else:
                 relevant_text = "No CAC mentioned"
+                print(f"No CAC mentioned in {filename}")
             
             # Store results
             data.append([filename, has_cac, relevant_text])
@@ -68,5 +75,5 @@ if __name__ == "__main__":
         writer.writerow(["Report Filename", "Reported CAC", "Reported Text"])
         writer.writerows(data)
         
+    print("Analysis complete. Results saved to cac_analysis.csv")
     output_directory = 'results/reports'
-    anonymize_reports(input_directory, output_directory)
