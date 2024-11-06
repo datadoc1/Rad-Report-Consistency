@@ -1,36 +1,72 @@
-import re
-import spacy
+import os
+import pandas as pd
+import csv
+from dotenv import load_dotenv
+import time
 
-nlp = spacy.load("en_core_sci_md")  # Load medical-specific language model
+def anonymize_reports(input_dir, output_dir):
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
-def clean_text(text):
-    # Remove unnecessary characters, lowercase text
-    text = text.lower()
-    text = re.sub(r'\n', ' ', text)
-    return text
+    for filename in os.listdir(input_dir):
+        if filename.endswith(".txt"):
+            with open(os.path.join(input_dir, filename), 'r') as file:
+                lines = file.readlines()
 
-def extract_cac_terms(report):
-    # Process the report using Spacy NLP
-    doc = nlp(report)
-    cac_terms = []
-    
-    for token in doc:
-        if token.text in ["calcification", "mild", "moderate", "severe"]:
-            cac_terms.append(token.text)
-    
-    return cac_terms
-
-def preprocess_reports(report_path):
-    with open(report_path, 'r') as file:
-        report = file.read()
-    clean_report = clean_text(report)
-    return extract_cac_terms(clean_report)
-
-def main():
-    reports_dir = "data/reports/"
-    for report_file in os.listdir(reports_dir):
-        terms = preprocess_reports(os.path.join(reports_dir, report_file))
-        print(terms)  # Later, save this data for further analysis
+            with open(os.path.join(output_dir, filename), 'w') as file:
+                for line in lines:
+                    if "REFERRING PHYSICIAN" not in line and "Electronically signed by" not in line:
+                        file.write(line)
 
 if __name__ == "__main__":
-    main()
+    load_dotenv()
+    input_directory = 'data/reports'
+    import google.generativeai as genai
+
+    api_key = os.getenv('GEMINI_API_KEY')
+    genai.configure(api_key=api_key)
+    model = genai.GenerativeModel("gemini-1.5-flash")
+
+    data = []
+    detection_prompt = """
+    Please analyze this radiology report and determine if a coronary artery or heart calcification (CAC) is mentioned.
+    Answer only 'True' if CAC is reported, or 'False' if it is not.
+    Report:
+    {text}
+    """
+
+    extraction_prompt = """
+    From the following radiology report, extract only the specific sentences or phrases that mention coronary artery or heart calcification (CAC).
+    Return only the relevant text snippets, separated by newlines. If none exist, return "None".
+    Report:
+    {text}
+    """
+
+    for filename in os.listdir(input_directory):
+        if filename.endswith(".txt"):
+            with open(os.path.join(input_directory, filename), 'r') as file:
+                report_text = file.read()
+                
+            # First check if CAC is present
+            detection_response = model.generate_content(detection_prompt.format(text=report_text))
+            has_cac = detection_response.text.strip().lower() == 'true'
+            time.sleep(5)
+            # If CAC is present, extract relevant portions
+            if has_cac:
+                extraction_response = model.generate_content(extraction_prompt.format(text=report_text))
+                relevant_text = extraction_response.text.strip()
+                time.sleep(5)
+            else:
+                relevant_text = "No CAC mentioned"
+            
+            # Store results
+            data.append([filename, has_cac, relevant_text])
+
+    # Create CSV file
+    with open('cac_analysis.csv', 'w', newline='', encoding='utf-8') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(["Report Filename", "Reported CAC", "Reported Text"])
+        writer.writerows(data)
+        
+    output_directory = 'results/reports'
+    anonymize_reports(input_directory, output_directory)
