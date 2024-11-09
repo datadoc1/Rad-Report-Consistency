@@ -1,0 +1,118 @@
+Report Filename,Reported CAC,Reported GV,Reported CAC text,Reported GV text,Reported VESSELS,Reported VESSELS text
+1.txt,True,False,"Atherosclerotic calcifications of the aortic arch and its major branches without evidence of aneurysmal dilatation. 
+None",,True,Atherosclerotic calcifications of the aortic arch and its major branches without evidence of aneurysmal dilatation.
+10.txt,False,False,,,False,
+11.txt,True,False,"Pronounced LAD and mild circumflex coronary artery calcifications are again seen.
+Pronounced LAD and left circumflex coronary artery calcifications, stable.",,True,"Atherosclerotic calcifications of the aorta with mild prominence of the descending aorta and aortic arch (luminal diameter measuring 3.9 cm).
+Stable atherosclerotic calcification of the aorta and mild diffuse ectasia."
+12.txt,True,False,Calcifications of the aortic valve.,,True,"Scattered atherosclerotic calcifications of the thoracic aorta is branches, no aneurysmal dilatation.
+Pulmonary trunk is normal in caliber, unremarkable on this noncontrast exam.
+Calcifications of the aortic valve."
+13.txt,True,False,Scattered coronary artery calcification.,,True,Great vessels: Normal on this limited non-contrast examination.
+14.txt,False,False,,,True,"Tortuous thoracic aorta with diffuse atherosclerotic calcifications.
+Mild hypoattenuation of the blood pool may represent anemia. 
+Right chest wall Port-A-Cath terminates in the right atrium."
+15.txt,True,False,"Severe three-vessel coronary artery calcification.
+Severe three-vessel coronary artery calcification.",,True,Great vessels: Mild fusiform dilation of the ascending aorta to 4 cm.
+16.txt,False,False,,,True,Great vessels: Normal on this limited non-contrast examination.
+17.txt,True,False,"Moderate coronary artery atherosclerotic calcifications.
+Mitral annular calcification.",,True,"Diffuse atherosclerotic calcifications of the thoracic aorta and its branches, no evidence of aneurysmal dilatation.
+Pulmonary trunk is normal in caliber, unremarkable on this noncontrast exam."
+18.txt,True,False,"Extensive trivessel coronary artery and aortic valve calcifications are seen. 
+Stable calcific/metallic density associated with the mitral valve apparatus.",,True,Atherosclerotic calcifications of the aortic arch and its major branches without evidence of aneurysmal dilatation.
+19.txt,True,False,"Coronary artery calcifications along the LAD and right coronary circulation.
+Moderate coronary atherosclerotic disease, most pronounced along the LAD.",,True,"Great vessels: Scattered atherosclerotic calcification noted in the aorta. 
+Pulmonary vasculature is unremarkable on this noncontrast study."
+2.txt,True,False,"Severe trivessel coronary artery calcification.
+Possible superimposed stents along the LAD.
+Severe trivessel coronary artery calcifications with questionable superimposed stent.",,True,"Scattered atherosclerotic calcifications noted in the aorta.
+Pulmonary vasculature appears unremarkable on this noncontrast study."
+20.txt,False,False,,,True,Great vessels: Normal on this limited non-contrast examination.
+21.txt,False,False,,,True,Great vessels: Normal on this limited non-contrast examination.
+22.txt,False,False,,,True,Great vessels: Normal on this limited non-contrast examination.
+23.txt,False,False,,,True,Great vessels: Normal on this limited non-contrast examination.
+24.txt,True,False,"Coronary artery calcifications are seen.
+Moderate coronary atherosclerotic disease.",,True,"Atherosclerotic calcifications noted in the aorta.
+Pulmonary vasculature appears unremarkable."
+25.txt,True,False,"Mild coronary artery calcifications 
+Dense aortic valve and mitral annular calcifications.",,True,"Great vessels: Normal on this limited non-contrast examination.
+Dense aortic valve and mitral annular calcifications."
+26.txt,False,False,,,True,"Scattered atherosclerotic calcifications of the thoracic aorta and its branches, no evidence of aneurysmal dilatation.
+Pulmonary trunk is borderline prominent measuring up to 3.1 cm, may represent pulmonary arterial hypertension in the"
+27.txt,True,False,Moderate trivessel coronary artery calcifications are seen.,,True,"Atherosclerotic calcifications of the aorta without aneurysmal dilatation.
+Pulmonary trunk measures 32 mm.
+Prominent caliber pulmonary trunk may reflect pulmonary arterial hypertension."
+28.txt,True,False,"Severe coronary artery atherosclerotic calcifications.
+Aortic valve calcifications.",,True,"Scattered atherosclerotic calcifications of the thoracic aorta is branches, no aneurysmal dilatation.
+Pulmonary trunk is normal in caliber, unremarkable on this noncontrast examination. 
+Aortic valve calcifications."
+29.txt,True,False,"Severe three-vessel coronary artery calcification again noted.
+Similar severe three-vessel coronary artery calcification.",,True,"Scattered atherosclerotic calcification of the aorta and its major branches without aneurysmal dilation or high-grade stenosis.
+The main pulmonary artery is dilated to 3.6 cm."
+3.txt,True,False,"Moderate coronary artery atherosclerotic calcifications, coronary stents are seen.",,True,"Atherosclerotic calcifications of the thoracic aorta and its branches without evidence of aneurysmal dilatation.
+Pulmonary trunk is normal in caliber, otherwise unremarkable on this noncontrast study."
+30.txt,True,False,Coronary artery calcifications are seen.,,True,"Scattered atherosclerotic calcifications of the thoracic aorta and its branches, no aneurysmal dilatation.
+Pulmonary trunk is normal in caliber, otherwise unremarkable on this noncontrast exam."
+31.txt,False,False,,,True,Great vessels: Normal on this limited non-contrast examination.
+32.txt,True,False,"Atherosclerotic calcifications of the aorta
+Aortic valve annular calcifications.
+Aortic valve annular calcifications.",,True,"Atherosclerotic calcifications of the aorta, otherwise normal on this limited non-contrast examination.
+Aortic valve annular calcifications."
+33.txt,True,False,None,,True,"Scattered atherosclerotic calcification of the aorta and its major branches without aneurysmal dilation.
+The main pulmonary artery is not dilated."
+34.txt,True,False,Coarse extensive triple vessel coronary artery and aortic valve calcifications again noted.,,True,Atherosclerotic calcifications of the aortic arch and its major branches without evidence of aneurysmal dilatation.
+35.txt,True,False,"Dense three-vessel coronary artery calcifications.
+Redemonstration of dense three-vessel coronary artery calcifications.",,True,"Scattered atherosclerotic calcifications of the aorta without aneurysmal dilation.
+The main pulmonary artery is not dilated."
+36.txt,True,False,"Few scattered trivessel coronary artery calcifications are seen.
+Few scattered trivessel coronary artery calcifications appear similar. 
+Recommend risk stratification if not previously performed.",,True,"Pulmonary trunk prominent in caliber at 32 mm.
+Otherwise normal on this limited non-contrast examination.
+Pulmonary trunk mildly prominent may reflect underlying pulmonary arterial hypertension."
+37.txt,True,False,Scattered three-vessel coronary artery calcifications.,,True,"Atherosclerotic calcifications of the thoracic aorta.
+Main pulmonary artery is not dilated."
+38.txt,True,False,Moderate coronary artery atherosclerotic calcifications.,,True,"Diffuse atherosclerotic calcifications of the thoracic aorta is branches
+Mild dilatation of the ascending aorta measuring up to 3.9 cm
+Tortuous appearance of the descending aorta
+Prominent pulmonary trunk measuring 
+Mild dilatation of the ascending aorta measuring up to 3.9 cm, stable.
+Prominent pulmonary trunk measuring up to 3.2 cm, this may represent pulmonary arterial hypertension, also unchanged."
+39.txt,True,False,"Dense three-vessel coronary artery calcification including along the left main, LAD and circumflex distributions.
+Dense mitral valve and three-vessel coronary artery calcifications.",,True,"Scattered atherosclerotic calcification of the aorta without aneurysmal dilation.
+The main pulmonary artery is not dilated."
+4.txt,True,False,"Moderate single-vessel LAD coronary artery calcifications are seen.
+Mild aortic valve annular calcifications.",,True,Great vessels: Normal on this limited non-contrast examination. Right chest wall Port-A-Cath terminates in the lower SVC
+40.txt,True,False,Moderate three-vessel coronary artery calcifications are seen.,,True,"Mild scattered atherosclerotic calcific plaque of the aorta.
+Otherwise within normal limits for noncontrast exam."
+41.txt,False,False,,,True,Great vessels: Normal on this limited non-contrast examination.
+42.txt,True,False,"Atherosclerosis calcifications of the aorta 
+None",,True,"Atherosclerosis calcifications of the aorta, otherwise unremarkable."
+43.txt,True,False,Coronary artery calcifications are seen.,,True,Great vessels: Normal on this limited non-contrast examination.
+44.txt,True,False,Great vessels: Aortic atherosclerotic calcifications.,,True,"Aortic atherosclerotic calcifications.
+Persistent enlargement of the pulmonary trunk at 33 mm.
+Stable changes of aortic root repair."
+45.txt,True,False,Severe coronary artery atherosclerotic calcifications/stents.,,True,"Thoracic aorta is normal in caliber throughout its course, no evidence of aneurysmal dilatation.
+Pulmonary trunk is normal in caliber, unremarkable on this noncontrast exam."
+46.txt,True,False,Extensive triple vessel coronary artery calcifications and metal stents.,,True,"Atherosclerotic calcifications of the aortic arch and its major branches without evidence of aneurysmal dilatation.
+Pulmonary trunk dilated to 34 mm."
+47.txt,True,False,"Pronounced trivessel coronary artery calcifications.
+Pronounced trivessel coronary artery calcifications.",,True,"Atherosclerotic calcifications noted in the aorta.
+Pulmonary vasculature appears unremarkable on this noncontrast study."
+48.txt,True,False,None,,True,Atherosclerotic calcifications of the aortic arch and its major branches without evidence of aneurysmal dilatation.
+49.txt,True,False,"Moderate single vessel LAD coronary artery calcifications 
+mild aortic valve annular calcifications",,True,"Common origin of the left common carotid and right innominate arteries.
+Extensive aortic atherosclerotic calcifications without evidence of aneurysmal dilatation.
+Relative hypoattenuation of the blood pool may be related to anemia."
+5.txt,True,False,"Changes of CABG with native coronary artery calcifications.
+Aortic valve calcifications.",,True,"Scattered atherosclerotic calcifications noted in the aorta.
+Pulmonary vasculature appears unremarkable on this noncontrasted study.
+Aortic valve calcifications."
+6.txt,True,False,Aortic annular calcifications.,,True,"Great vessels: Aorta and pulmonary arteries are normal in caliber throughout. 
+Aortic annular calcifications."
+7.txt,True,False,"Mild coronary artery calcification. 
+Redemonstration of extensive mitral annular calcifications.",,True,"Scattered atherosclerotic calcifications of the aorta and its major branches without aneurysmal dilation.
+The main pulmonary artery is not dilated, however the right main pulmonary artery is dilated to 3 cm.
+Asymmetric 3 cm dilation of the right main pulmonary artery may reflect underlying pulmonary arterial hypertension."
+8.txt,True,False,Mild coronary artery atherosclerotic calcifications.,,True,"Scattered atherosclerotic calcifications of the thoracic aorta without evidence of aneurysmal dilatation.
+Pulmonary trunk is normal in caliber, unremarkable on this noncontrast exam."
+9.txt,True,False,Mild aortic valve annular and coronary artery calcifications are seen.,,True,Great vessels: Normal on this limited non-contrast examination.
